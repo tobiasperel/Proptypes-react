@@ -1,6 +1,13 @@
 import '../App.css';
+import {arrayOf} from 'prop-types'
+import {ProductoShape} from '../Shapes'
+import image from '../images/product-1.jpg'
 
-function Product() {
+Product.propTypes = {
+  productos:arrayOf(ProductoShape)
+}
+
+function Product({ productos }) {
   return (
     <div id="fh5co-product">
         <div className="container">
@@ -14,7 +21,7 @@ function Product() {
           <div className="row">
             <div className="col-md-4 text-center animate-box">
               <div className="product">
-                <div className="product-grid" >
+                <div className="product-grid" style={{ backgroundImage:`url(${image})` }}> {/*aca va la img*/}
                   <div className="inner">
                     <p>
                       <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>

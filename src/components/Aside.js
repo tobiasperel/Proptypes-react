@@ -1,11 +1,11 @@
 import '../App.css';
-
+import imagebg1 from '../images/image-bg-1.jpg';
 function Aside() {
   return (
     <aside id="fh5co-hero" className="js-fullheight">
         <div className="flexslider js-fullheight">
           <ul className="slides">
-            <li>
+            <li style={{ backgroundImage:`url(${imagebg1})` }}>
               <div className="overlay-gradient"></div>
               <div className="container">
                 <div className="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
