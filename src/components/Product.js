@@ -27,13 +27,6 @@ function Product({ productos }) {
                 />
             ))}
           </div>
-          <div className="row">
-            {productos.map((producto) => (
-                <ProductIndividual 
-                  producto={producto}
-                />
-            ))}
-          </div>
         </div>
       </div>
   )

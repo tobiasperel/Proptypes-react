@@ -6,9 +6,6 @@ export const ProductoShape = shape({
     image:string
 })
 
-export const CounterShape = shape({
-    creativityFuel: number,
-    happyClients: number,
-    allProducts: number,
-    hoursSpent: number
-})
+export const CounterShape = shape(
+    { nombre: string, emote:string, dataNum: number }
+)
