@@ -1,7 +1,9 @@
 import '../App.css';
 import {arrayOf} from 'prop-types'
-import {ProductoShape} from '../Shapes'
+import {ProductoShape} from '../Shapes/index.js'
+import React from 'react';
 import image from '../images/product-1.jpg'
+import ProductIndividual from './componentIndividual/ProductIndividual';
 
 Product.propTypes = {
   productos:arrayOf(ProductoShape)
@@ -19,105 +21,18 @@ function Product({ productos }) {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid" style={{ backgroundImage:`url(${image})` }}> {/*aca va la img*/}
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
-                  <span className="price">$350</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid">
-                  <span className="sale">Sale</span>
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Pavilion Speaker</a></h3>
-                  <span className="price">$600</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid">
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Ligomancer</a></h3>
-                  <span className="price">$780</span>
-                </div>
-              </div>
-            </div>
+            {productos.map((producto) => (
+                <ProductIndividual 
+                  producto={producto}
+                />
+            ))}
           </div>
           <div className="row">
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid">
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Alato Cabinet</a></h3>
-                  <span className="price">$800</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid">
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Earing Wireless</a></h3>
-                  <span className="price">$100</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 text-center animate-box">
-              <div className="product">
-                <div className="product-grid">
-                  <div className="inner">
-                    <p>
-                      <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                      <a href="single.html" className="icon"><i className="icon-eye"></i></a>
-                    </p>
-                  </div>
-                </div>
-                <div className="desc">
-                  <h3><a href="single.html">Sculptural Coffee Table</a></h3>
-                  <span className="price">$960</span>
-                </div>
-              </div>
-            </div>
+            {productos.map((producto) => (
+                <ProductIndividual 
+                  producto={producto}
+                />
+            ))}
           </div>
         </div>
       </div>

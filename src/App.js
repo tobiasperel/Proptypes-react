@@ -9,14 +9,26 @@ import Counter from './components/Counter';
 import Footer from './components/Footer';
 import Started from './components/Started';
 import PropTypes from 'prop-types';
+import product1 from './images/product-1.jpg'
+import product2 from './images/product-2.jpg'
+import product3 from './images/product-3.jpg'
 
 
-const productos = [
-  {nombre:'Tuki',precio: 400,image: 'https://yt3.ggpht.com/d0Obn2GZNDXqUc15SPYJDbomDic17Ysv2VlQOj2imo9WgCk8hy8M-6nHWsJ3YKLahTUk4FKlQDk=s900-c-k-c0x00ffffff-no-rj'},
-  {nombre:'Tuki',precio: 400,image: 'https://yt3.ggpht.com/d0Obn2GZNDXqUc15SPYJDbomDic17Ysv2VlQOj2imo9WgCk8hy8M-6nHWsJ3YKLahTUk4FKlQDk=s900-c-k-c0x00ffffff-no-rj'},
-  {nombre:'Tuki',precio: 400,image: 'https://yt3.ggpht.com/d0Obn2GZNDXqUc15SPYJDbomDic17Ysv2VlQOj2imo9WgCk8hy8M-6nHWsJ3YKLahTUk4FKlQDk=s900-c-k-c0x00ffffff-no-rj'},
 
+const listadoP = [
+  {nombre:'sillita',precio: 400,image: product1},
+  {nombre:'lamparita',precio: 400,image: product2},
+  {nombre:'silloni',precio: 400,image: product3},
 ]
+
+const counterData = {
+  creativityFuel: 13455,
+  happyClients: 465,
+  allProducts: 1332,
+  hoursSpent: 2500
+}
+
+
 function App() {
   return (
     <>
@@ -25,9 +37,9 @@ function App() {
         <Navbar/>
         <Aside/>
         <Services/>
-        <Product productos={productos}/>
+        <Product productos={listadoP}/>
         <Testimonial/>
-        <Counter/>
+        <Counter data={counterData}/>
         <Started/>
         <Footer/>
       

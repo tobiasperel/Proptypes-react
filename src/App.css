@@ -4,8 +4,9 @@
   font-style: normal;
 }
 
-.litukk{
-  background-image: url("./images/img_bg_1.jpg")
+
+.iconPer {
+  font-style: normal!important;
 }
 /* =======================================================
 *
@@ -13132,3 +13133,4 @@ h1, h2, h3, h4, h5, h6, figure {
    -webkit-animation-name: slideOutUp;
    animation-name: slideOutUp;
  }
+
