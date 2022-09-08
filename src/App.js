@@ -33,6 +33,12 @@ const counterData = [
   { nombre: "Hours Spent", emote: "⌚", dataNum: 2500},
 ]
 
+const servicesData = [
+  { nombre: "Creativity Fuel", emote: "💳", descripcion: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove", url: 'https://themewagon.com/themes/download-free-responsive-ecommerce-template-shop-sales-pages/'},
+  { nombre: "Save Money", emote: "💸", descripcion: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove", url: 'https://themewagon.com/themes/download-free-responsive-ecommerce-template-shop-sales-pages/'},
+  { nombre: "Free Delivery", emote: "🚚", descripcion: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove", url: 'https://themewagon.com/themes/download-free-responsive-ecommerce-template-shop-sales-pages/'},
+]
+
 
 function App() {
   return (
@@ -41,7 +47,7 @@ function App() {
       <div id="page">
         <Navbar/>
         <Aside/>
-        <Services/>
+        <Services allServices={servicesData}/>
         <Product productos={listadoP}/>
         <Testimonial/>
         <Counter dataAll={counterData}/>

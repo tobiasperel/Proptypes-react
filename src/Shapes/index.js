@@ -9,3 +9,7 @@ export const ProductoShape = shape({
 export const CounterShape = shape(
     { nombre: string, emote:string, dataNum: number }
 )
+
+export const ServicesShape = shape(
+    { nombre: string, emote:string, descripcion:string, url: string }
+)
