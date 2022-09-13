@@ -1,5 +1,7 @@
 import '../../App.css';
 import { ProductoShape } from '../../Shapes/index.js';
+import { Link } from 'react-router-dom';
+
 
 function Producto({producto}) {
   const {nombre,precio,image} = producto;
@@ -9,8 +11,7 @@ function Producto({producto}) {
         <div className="product-grid" style={{ backgroundImage:`url(${image})` }}>
             <div className="inner">
             <p>
-                <a href="single.html" className="icon"><i className="icon-shopping-cart"></i></a>
-                <a href="single.html" className="icon"><i className="icon-eye"></i></a>
+                <Link to='/patito' detalleProducto={producto} className="icon"><i className="icon-shopping-cart"></i></Link>
             </p>
             </div>
         </div>

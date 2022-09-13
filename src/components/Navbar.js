@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Navbar() {
@@ -16,7 +17,7 @@ function Navbar() {
                     <li><a href="single.html">Single Shop</a></li>
                   </ul>
                 </li>
-                <li><a href="about.html">About</a></li>
+                <li><Link to='/about'>About</Link></li>
                 <li className="has-dropdown">
                   <a href="services.html">Services</a>
                   <ul className="dropdown">
@@ -31,15 +32,7 @@ function Navbar() {
             </div>
             <div className="col-md-3 col-xs-4 text-right hidden-xs menu-2">
               <ul>
-                <li className="search">
-                  <div className="input-group">
-                      <input type="text" placeholder="Search.."/>
-                      <span className="input-group-btn">
-                        <button className="btn btn-primary" type="button"><i className="icon-search"></i></button>
-                      </span>
-                    </div>
-                </li>
-                <li className="shopping-cart"><a href="#" className="cart"><span><small>0</small><i className="icon-shopping-cart"></i></span></a></li>
+              <li><i className='iconPer2'><span><small>0</small>🛒</span></i></li>
               </ul>
             </div>
           </div>

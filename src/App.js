@@ -15,6 +15,7 @@ import product3 from './images/product-3.jpg'
 import product4 from './images/product-4.jpg'
 import product5 from './images/product-5.jpg'
 import product6 from './images/product-6.jpg'
+import { Routes, Route, Link } from "react-router-dom";
 
 
 
@@ -43,12 +44,13 @@ const servicesData = [
 function App() {
   return (
     <>
-      <div className="fh5co-loader"></div> 
       <div id="page">
         <Navbar/>
         <Aside/>
         <Services allServices={servicesData}/>
+        
         <Product productos={listadoP}/>
+        
         <Testimonial/>
         <Counter dataAll={counterData}/>
         <Started/>
@@ -61,6 +63,14 @@ function App() {
 
 
   );
+}
+
+function Home() {
+  return <>home</>;
+}
+
+function About() {
+  return <>about</>;
 }
 
 export default App;
