@@ -19,7 +19,7 @@ const Data = {
     ],
     counterData: [
         { "nombre": "Creativity Fuel", "emote": "👁‍🗨", "dataNum": 13455},
-        { "nombr": "Happy Clients", "emote": "😊", "dataNum": 465},
+        { "nombre": "Happy Clients", "emote": "😊", "dataNum": 465},
         { "nombre": "All Products",  "emote": "🛒", "dataNum": 1332},
         { "nombre": "Hours Spent", "emote": "⌚", "dataNum": 2500},
     ],

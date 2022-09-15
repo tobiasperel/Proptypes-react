@@ -20,6 +20,9 @@ function Navbar() {
                 <li className="has-dropdown">
                   <a href="#fh5co-services">Services</a>
                 </li>
+                <li className="has-dropdown">
+                  <a href="#fh5co-testimonial">Testimony</a>
+                </li>
                 <li><a href="#fh5co-footer">Contact</a></li>
               </ul>
             </div>

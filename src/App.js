@@ -10,7 +10,6 @@ function App() {
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/patito/:idParams" element={<DetalleProducto />} />
-          {/* <Route path="/about" element={<Footer />} /> */}
       </Routes>
     </BrowserRouter>
   );
