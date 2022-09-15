@@ -1,6 +1,7 @@
 import {string, number, shape} from 'prop-types'
 
 export const ProductoShape = shape({
+    id:number,
     nombre:string,
     precio:number,
     image:string

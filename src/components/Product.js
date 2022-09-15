@@ -5,10 +5,6 @@ import React from 'react';
 import image from '../images/product-1.jpg'
 import ProductIndividual from './componentIndividual/ProductIndividual';
 
-Product.propTypes = {
-  productos:arrayOf(ProductoShape)
-}
-
 function Product({ productos }) {
   return (
     <div id="fh5co-product">
@@ -22,14 +18,18 @@ function Product({ productos }) {
           </div>
           <div className="row">
             {productos.map((producto) => (
-                <ProductIndividual 
-                  producto={producto}
-                />
-            ))}
+              <ProductIndividual 
+              producto={producto}
+              />
+              ))}
           </div>
         </div>
       </div>
   )
+}
+
+Product.propTypes = {
+  productos:arrayOf(ProductoShape)
 }
 
 export default Product

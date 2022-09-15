@@ -4,7 +4,9 @@
   font-style: normal;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 .iconPer {
   font-style: normal!important;
 }
@@ -12,6 +14,7 @@
 .iconPer2 {
   font-size: large;
 }
+
 
 /* =======================================================
 *

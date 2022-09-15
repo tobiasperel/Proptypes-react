@@ -3,21 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Footer from './components/Footer'
-import Counter from './components/Counter';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import DetalleView from './components/DetalleView';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/about" element={<Footer />} />
-          <Route path="/patito" element={<DetalleView />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
 

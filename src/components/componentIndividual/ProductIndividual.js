@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 
 function Producto({producto}) {
-  const {nombre,precio,image} = producto;
+  const {id,nombre,precio,image} = producto;
   return (
     <div className="col-md-4 text-center animate-box">
         <div className="product">
         <div className="product-grid" style={{ backgroundImage:`url(${image})` }}>
             <div className="inner">
             <p>
-                <Link to='/patito' detalleProducto={producto} className="icon"><i className="icon-shopping-cart"></i></Link>
+                <Link to= {`/patito/${id}`}  className="icon"><i className='iconPer iconPer2'>🔎</i></Link>
             </p>
             </div>
         </div>
@@ -25,7 +25,7 @@ function Producto({producto}) {
 }
 
 Producto.propTypes = {
-    pruducto:ProductoShape
+    producto:ProductoShape
 } 
 
 export default Producto
