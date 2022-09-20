@@ -1,10 +1,9 @@
 import './App.css';
-import Footer from './components/Footer';
 import Home from './Pages/Home';
 import DetalleProducto from './Pages/DetalleProducto';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CarritoProvider } from './context/carrito';
-import {CarritoData} from './components/CarritoData';
+import {CarritoData} from './Pages/CarritoData';
 function App() {
   return (
     <CarritoProvider>

@@ -4,24 +4,16 @@ import Data from '../data'
 import { ProductoShape } from '../Shapes/index.js';
 import Navbar from '../components/Navbar';
 import { useCarritoContext } from '../context/carrito';
+import Footer from '../components/Footer';
 
 export default function DetalleProducto() {
     const { idParams } = useParams()
     const {carritoProductos,setCarritoProductos} = useCarritoContext()
 
-    // const [producto, setProducto] = useState({});
-    // useEffect(() => {
-    //     setProducto(
-    //         Data.productos.find(p => p.id === parseInt(idParams))
-    //     )
-    // }, [])
-
     const producto = useMemo(() => {
         return Data.productos.find(p => p.id === parseInt(idParams))
     }, [])
-    // useEffect(() => {
-    //     console.log(producto.nombre)
-    // }, [])
+    
     return (
         <>
             <Navbar/>
@@ -30,6 +22,7 @@ export default function DetalleProducto() {
             <p>{producto.precio}</p>
             <img src={producto.image}/>
             <button onClick={()=>setCarritoProductos([...carritoProductos,producto])}>Agregar al carrito</button>
+            <Footer/>
         </>
     )
 }
