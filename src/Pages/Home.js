@@ -17,14 +17,12 @@ export default function Home() {
   return (
     <>
       <div id="page">
-        <Navbar/>
         <Aside/>
         <Services allServices={Data.servicesData}/>
-        <Product productos={Data.productos}/>
+        <Product productos={Data.productos} estaCarrito={false}/>
         <Testimonial/>
         <Counter dataAll={Data.counterData}/>
         <Started/>
-        <Footer/>
       </div>
       <div className="gototop js-top">
         <a href="#" className="js-gotop"><i className="icon-arrow-up"></i></a>

@@ -14,6 +14,80 @@ html {
 .iconPer2 {
   font-size: large;
 }
+.iconPer3 {
+  font-size: 2em;
+}
+
+.botonBorrar {
+  background: none;
+	color: inherit;
+	border: none;
+  margin-left: 5px;
+  margin-top: 10px;
+	cursor: pointer;
+	outline: inherit;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.botonBorrar:hover {
+  transition: 0.5s;
+  background-color: #ff6969;
+
+}
+
+
+.containerDetail {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 30em;
+  padding-right: 30em;
+}
+
+.imageDetail {
+  width: 55rem;
+  height: auto;
+  padding-right: 5rem;
+}
+
+.dataDetail{ 
+  padding-left: 5rem;
+}
+
+.titleDetail {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.priceDetail {
+  font-size: 4rem;
+}
+
+.buttonAddCarrito {
+  background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	outline: inherit;
+  background-color: #ffe99b;
+  font-size: 2rem;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 1rem;
+  transition: 0.3s;
+}
+
+.buttonAddCarrito:hover {
+  transition: 0.3s;
+  background-color: #ffe173;
+}
+
+
+
 
 
 /* =======================================================
