@@ -15,7 +15,7 @@ function Started() {
                 <form className="form-inline">
                 <div className="col-md-6 col-sm-6">
                     <div className="form-group">
-                    <label for="email" className="sr-only">Email</label>
+                    <label htmlFor="email" className="sr-only">Email</label>
                     <input type="email" className="form-control" id="email" placeholder="Email" />
                     </div>
                 </div>

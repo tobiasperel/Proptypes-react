@@ -16,8 +16,8 @@ function Counter({ dataAll }) {
           <div className="display-t">
             <div className="display-tc">
               {
-                dataAll.map((data) => (
-                  <CounterIndividual data={data}/>
+                dataAll.map((data, idx) => (
+                  <CounterIndividual key={idx} data={data}/>
                 ))
               }
             </div>

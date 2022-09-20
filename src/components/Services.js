@@ -14,8 +14,8 @@ function Services({ allServices }) {
         <div className="container">
           <div className="row">
             {
-              allServices.map((service) =>(
-                <ServiceIndividual service={service}/>
+              allServices.map((service, idx) =>(
+                <ServiceIndividual service={service} key={idx}/>
               ))
             }
           </div>

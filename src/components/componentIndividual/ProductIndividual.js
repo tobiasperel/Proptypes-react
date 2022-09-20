@@ -11,7 +11,7 @@ function Producto({producto}) {
         <div className="product-grid" style={{ backgroundImage:`url(${image})` }}>
             <div className="inner">
             <p>
-                <Link to= {`/patito/${id}`}  className="icon"><i className='iconPer iconPer2'>🔎</i></Link>
+                <Link to= {`/detalleProducto/${id}`}  className="icon"><i className='iconPer iconPer2'>🔎</i></Link>
             </p>
             </div>
         </div>

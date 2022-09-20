@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/patito/:idParams" element={<DetalleProducto />} />
+            <Route path="/detalleProducto/:idParams" element={<DetalleProducto />} />
         </Routes>
       </BrowserRouter>
     </CarritoProvider>
