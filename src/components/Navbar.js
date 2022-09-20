@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { useCarritoContext } from '../context/carrito';
 
 function Navbar() {
+  const {carritoProductos,setCarritoProductos} = useCarritoContext()
   return (
     <nav className="fh5co-nav" role="navigation">
         <div className="container">
@@ -28,7 +30,7 @@ function Navbar() {
             </div>
             <div className="col-md-3 col-xs-4 text-right hidden-xs menu-2">
               <ul>
-              <li><Link to= {`/carrito/`}><i className='iconPer2'><span><small>0</small>🛒</span></i></Link></li>
+              <li><Link to= {`/carrito/`}><i className='iconPer2'><span><small>{carritoProductos.length}</small>🛒</span></i></Link></li>
               </ul>
             </div>
           </div>
