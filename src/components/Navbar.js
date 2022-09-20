@@ -28,7 +28,7 @@ function Navbar() {
             </div>
             <div className="col-md-3 col-xs-4 text-right hidden-xs menu-2">
               <ul>
-              <li><i className='iconPer2'><span><small>0</small>🛒</span></i></li>
+              <li><Link to= {`/carrito/`}><i className='iconPer2'><span><small>0</small>🛒</span></i></Link></li>
               </ul>
             </div>
           </div>
