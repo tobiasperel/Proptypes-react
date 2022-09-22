@@ -14,13 +14,10 @@ function Navbar() {
             <div className="col-md-6 col-xs-6 text-center menu-1">
               <ul>
                 <li className="has-dropdown">
-                  <a href="#fh5co-product">Shop</a>
-                  <ul className="dropdown">
-                    <li><a href="single.html">Single Shop</a></li>
-                  </ul>
+                  <a href="#fh5co-services">Services</a>
                 </li>
                 <li className="has-dropdown">
-                  <a href="#fh5co-services">Services</a>
+                  <a href="#fh5co-product">Shop</a>
                 </li>
                 <li className="has-dropdown">
                   <a href="#fh5co-testimonial">Testimony</a>

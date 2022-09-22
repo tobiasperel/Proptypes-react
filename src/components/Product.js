@@ -17,10 +17,10 @@ function Product({ productos }) {
             </div>
           </div>
           <div className="row">
-            {productos.map((producto, idx) => (
+            {productos.map((producto, id) => (
               <ProductIndividual 
               producto={producto}
-              key={idx}
+              key={id}
               />
               ))}
           </div>

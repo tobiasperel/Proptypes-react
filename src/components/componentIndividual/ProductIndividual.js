@@ -7,6 +7,7 @@ import { useCarritoContext } from '../../context/carrito';
 function Producto({producto, estaCarrito}) {
   const {carritoProductos,setCarritoProductos} = useCarritoContext()
   const {id,nombre,precio,image} = producto;
+  const productoActual = carritoProductos
   return (
     <div className="col-md-4 text-center animate-box">
         <div className="product">
@@ -16,7 +17,7 @@ function Producto({producto, estaCarrito}) {
                     estaCarrito && (
                         <p>
                             <button className='botonBorrar' onClick={() => setCarritoProductos(carritoProductos.filter(p => producto.id !== p.id ))}>
-                            <i className='iconPer iconPer3'>🗑️</i>
+                                <i className='iconPer iconPer3'>🗑️</i>
                             </button>
                         </p>
                     )

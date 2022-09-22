@@ -15,6 +15,23 @@ export default function DetalleProducto() {
         return Data.productos.find(p => p.id === parseInt(idParams))
     }, [])
     
+    const productoGod = {
+        id: carritoProductos.length,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        image: producto.image
+    }
+
+    useEffect(() => {
+        console.log(producto);
+    },[])
+    
+    const addCarrito = () => {
+        setCarritoProductos([...carritoProductos, productoGod])
+    }
+    
+
+
     return (
         <div className='containerDetail'>
             <img className='imageDetail' src={producto.image}/>
@@ -22,7 +39,7 @@ export default function DetalleProducto() {
                 <p className='titleDetail'>{producto.nombre}</p>
                 <p className='priceDetail'>${producto.precio}</p>
                 <p>(id: {producto.id})</p>
-                <button className='buttonAddCarrito' onClick={()=>setCarritoProductos([...carritoProductos,producto])}>Agregar al carrito</button>
+                <button className='buttonAddCarrito' onClick={addCarrito}>Agregar al carrito</button>
             </div>
         </div>
     )
