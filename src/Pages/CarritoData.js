@@ -3,14 +3,11 @@ import { useCarritoContext } from '../context/carrito';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ProductIndividual from '../components/componentIndividual/ProductIndividual'
+import ProductoList from '../components/componentIndividual/ProductList';
 import '../App.css'
 
 export const CarritoData = () => {
   const {carritoProductos,setCarritoProductos} = useCarritoContext()
-  
-  useEffect(() => {
-    console.log(carritoProductos)
-  }, [carritoProductos])
 
   return (
     <>
@@ -26,13 +23,15 @@ export const CarritoData = () => {
           {
             carritoProductos.length != 0 ? (
               carritoProductos.map(producto => {
-                return (
-                  <>
-                    <div style={{position:"relative"}}>
-                      <ProductIndividual producto={producto} estaCarrito={true}/>
-                    </div>
-                  </>
-              )
+                if (producto.id != -1) {
+                  return (
+                    <>
+                      <div style={{position:"relative"}}>
+                        <ProductoList producto={producto} estaCarrito={true}/>
+                      </div>
+                    </>
+                ) 
+                }
             })
             ) : (
               <div className='hagoTodoPeer'>

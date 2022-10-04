@@ -21,16 +21,28 @@ export default function DetalleProducto() {
         precio: producto.precio,
         image: producto.image
     }
-
-    useEffect(() => {
-        console.log(producto);
-    },[])
     
     const addCarrito = () => {
-        setCarritoProductos([...carritoProductos, productoGod])
+        if (carritoProductos.map(p => p.id).includes(producto.id)) {
+            setCarritoProductos(
+                carritoProductos.map(prod => {
+                    if(prod.id === producto.id) {
+                        return {
+                            ...prod,
+                            cantidad: prod.cantidad + 1
+                        }
+                    } else {
+                        return prod
+                    }
+                })
+            )
+        } else {
+            setCarritoProductos([
+                ...carritoProductos,
+                {...producto, cantidad: 1}
+            ])
+        }
     }
-    
-
 
     return (
         <div className='containerDetail'>

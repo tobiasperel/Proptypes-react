@@ -8,6 +8,7 @@ function Producto({producto, estaCarrito}) {
   const {carritoProductos,setCarritoProductos} = useCarritoContext()
   const {id,nombre,precio,image} = producto;
   const productoActual = carritoProductos
+
   return (
     <div className="col-md-4 text-center animate-box">
         <div className="product">
