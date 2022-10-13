@@ -84,8 +84,7 @@ export function CarritoProvider (props) {
 
     const value = useMemo(() => {
         return ({
-           carritoProductos,
-           setCarritoProductos,
+           carritoProductos,           
            masCarrito,
            menosCarrito,
            removeProducto,

@@ -1,18 +1,19 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Data from '../data'
 import { ProductoShape } from '../Shapes/index.js';
-import Navbar from '../components/Navbar';
 import { useCarritoContext } from '../context/carrito';
-import Footer from '../components/Footer';
+import { useProductoContext } from '../context/productos';
 import '../App.css'
 
 export default function DetalleProducto() {
     const { idParams } = useParams()
     const { addCarrito } = useCarritoContext()
-    const producto = useMemo(() => {
-        return Data.productos.find(p => p.id === parseInt(idParams))
-    }, [])
+    const {getById} = useProductoContext()
+    const [producto,setProducto] = useState({})
+
+    useEffect(() => {
+      setProducto(getById(idParams))
+    }, [idParams])
 
     return (
         <div className='containerDetail'>

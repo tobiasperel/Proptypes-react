@@ -11,15 +11,18 @@ import Started from '../components/Started';
 import PropTypes from 'prop-types';
 import { Routes, Route, Link } from "react-router-dom";
 import Data from '../data';
+import { useProductoContext } from '../context/productos';
 
   
 export default function Home() {
+  const {productos} = useProductoContext()
+
   return (
     <>
       <div id="page">
         <Aside/>
         <Services allServices={Data.servicesData}/>
-        <Product productos={Data.productos} estaCarrito={false}/>
+        <Product productos={productos} estaCarrito={false}/>
         <Testimonial/>
         <Counter dataAll={Data.counterData}/>
         <Started/>
