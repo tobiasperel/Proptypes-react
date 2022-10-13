@@ -17,7 +17,6 @@ function ProductoList({ producto }) {
             carritoProductos.map(prod => {
                 
                 if(prod.id === id) {
-                    console.log(id);
                     return {
                         ...prod,
                         cantidad: prod.cantidad + 1
@@ -33,6 +32,10 @@ function ProductoList({ producto }) {
         setCarritoProductos(
             carritoProductos.map(prod => {
                 if(prod.id === producto.id) {
+                    if(prod.cantidad === 1){
+                        removeProducto(id)
+                        return
+                    }
                     return {
                         ...prod,
                         cantidad: prod.cantidad - 1
@@ -40,8 +43,14 @@ function ProductoList({ producto }) {
                 } else {
                     return prod
                 }
-            })
+            }).filter(p => p !== undefined)
         )
+    }
+
+    const removeProducto = (id) => {
+        const nuevoCarrito = carritoProductos.filter(p => id !== p.id)
+        setCarritoProductos(nuevoCarrito)
+        if (!nuevoCarrito.length) localStorage.removeItem("carrito")
     }
 
     return (
@@ -49,7 +58,7 @@ function ProductoList({ producto }) {
             <img src={image}/>
             <h3>{nombre}</h3>
             <h3>$ {precio}</h3>
-            <button onClick={() => setCarritoProductos(carritoProductos.filter(p => producto.id !== p.id))}>
+            <button onClick={() => removeProducto(id)}>
                 <p>🗑️</p>
             </button>
             <button onClick={menosCarrito}>

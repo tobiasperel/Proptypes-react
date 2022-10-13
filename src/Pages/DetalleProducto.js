@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Data from '../data'
 import { ProductoShape } from '../Shapes/index.js';
@@ -10,17 +10,18 @@ import '../App.css'
 export default function DetalleProducto() {
     const { idParams } = useParams()
     const {carritoProductos,setCarritoProductos} = useCarritoContext()
-
     const producto = useMemo(() => {
         return Data.productos.find(p => p.id === parseInt(idParams))
     }, [])
     
+
     const productoGod = {
         id: carritoProductos.length,
         nombre: producto.nombre,
         precio: producto.precio,
         image: producto.image
     }
+    
     
     const addCarrito = () => {
         if (carritoProductos.map(p => p.id).includes(producto.id)) {

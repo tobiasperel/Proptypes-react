@@ -86,11 +86,10 @@ html {
 
 .containerDetail {
   display: flex;
+  justify-content: center;
   flex-direction: row;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding-left: 30em;
-  padding-right: 30em;
 }
 
 .imageDetail {

@@ -4,6 +4,20 @@ export const CarritoContext = createContext();
 export function CarritoProvider (props) {
     const [carritoProductos, setCarritoProductos] = useState([]);
 
+
+    useEffect(() => {
+      const items = JSON.parse(localStorage.getItem('carrito'));
+      if (items) {
+        setCarritoProductos(items);
+      }
+    }, []);
+    
+    useEffect(() => {
+        if (carritoProductos.length === 0) return
+        localStorage.setItem("carrito", JSON.stringify(carritoProductos));
+    }, [carritoProductos])
+    
+
     const value = useMemo(() => {
         return ({
            carritoProductos,

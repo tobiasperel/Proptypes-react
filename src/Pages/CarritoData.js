@@ -6,7 +6,7 @@ import ProductoList from '../components/componentIndividual/ProductoList';
 import '../App.css'
 
 export const CarritoData = () => {
-  const {carritoProductos,setCarritoProductos} = useCarritoContext()
+  const {carritoProductos} = useCarritoContext()
 
   return (
     <>
