@@ -6,6 +6,7 @@ import { CarritoProvider } from './context/carrito';
 import {CarritoData} from './Pages/CarritoData';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
 function App() {
   return (
     <CarritoProvider>

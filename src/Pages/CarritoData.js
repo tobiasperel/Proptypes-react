@@ -2,8 +2,7 @@ import React, { useEffect } from 'react'
 import { useCarritoContext } from '../context/carrito';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ProductIndividual from '../components/componentIndividual/ProductIndividual'
-import ProductoList from '../components/componentIndividual/ProductList';
+import ProductoList from '../components/componentIndividual/ProductoList';
 import '../App.css'
 
 export const CarritoData = () => {
@@ -27,7 +26,7 @@ export const CarritoData = () => {
                   return (
                     <>
                       <div style={{position:"relative"}}>
-                        <ProductoList producto={producto} estaCarrito={true}/>
+                        <ProductoList producto={producto}/>
                       </div>
                     </>
                 ) 
