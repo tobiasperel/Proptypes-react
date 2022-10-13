@@ -6,52 +6,9 @@ import { useEffect, useState } from 'react';
 
 
 function ProductoList({ producto }) {
-    const { carritoProductos, setCarritoProductos } = useCarritoContext()
+    const { carritoProductos, removeProducto, menosCarrito, masCarrito } = useCarritoContext()
     const { id, nombre, precio, image, cantidad } = producto;
     const productoActual = carritoProductos
-    
-    
-
-    const masCarrito = () => {
-        setCarritoProductos(
-            carritoProductos.map(prod => {
-                
-                if(prod.id === id) {
-                    return {
-                        ...prod,
-                        cantidad: prod.cantidad + 1
-                    }
-                } else {
-                    return prod
-                }
-            })
-        )
-    }
-
-    const menosCarrito = () => {
-        setCarritoProductos(
-            carritoProductos.map(prod => {
-                if(prod.id === producto.id) {
-                    if(prod.cantidad === 1){
-                        removeProducto(id)
-                        return
-                    }
-                    return {
-                        ...prod,
-                        cantidad: prod.cantidad - 1
-                    }
-                } else {
-                    return prod
-                }
-            }).filter(p => p !== undefined)
-        )
-    }
-
-    const removeProducto = (id) => {
-        const nuevoCarrito = carritoProductos.filter(p => id !== p.id)
-        setCarritoProductos(nuevoCarrito)
-        if (!nuevoCarrito.length) localStorage.removeItem("carrito")
-    }
 
     return (
         <div className="product-list">
@@ -61,10 +18,10 @@ function ProductoList({ producto }) {
             <button onClick={() => removeProducto(id)}>
                 <p>🗑️</p>
             </button>
-            <button onClick={menosCarrito}>
+            <button onClick={() => menosCarrito(id)}>
                 <p>-</p>
             </button>
-            <button onClick={ masCarrito}>
+            <button onClick={() => masCarrito(id)}>
                 <p>+</p>
             </button>
             <p>{cantidad}</p>

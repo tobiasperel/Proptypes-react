@@ -18,13 +18,81 @@ export function CarritoProvider (props) {
     }, [carritoProductos])
     
 
+
+
+    const removeProducto = (id) => {
+        const nuevoCarrito = carritoProductos.filter(p => id !== p.id)
+        setCarritoProductos(nuevoCarrito)
+        if (!nuevoCarrito.length) localStorage.removeItem("carrito")
+    }
+
+    const masCarrito = (id) => {
+        setCarritoProductos(
+            carritoProductos.map(prod => {
+                if(prod.id === id) {
+                    return {
+                        ...prod,
+                        cantidad: prod.cantidad + 1
+                    }
+                } else {
+                    return prod
+                }
+            })
+        )
+    }
+
+    const menosCarrito = (id) => {
+        setCarritoProductos(
+            carritoProductos.map(prod => {
+                if(prod.id === id) {
+                    if(prod.cantidad === 1){
+                        removeProducto(id)
+                        return
+                    }
+                    return {
+                        ...prod,
+                        cantidad: prod.cantidad - 1
+                    }
+                } else {
+                    return prod
+                }
+            }).filter(p => p !== undefined)
+        )
+    }
+    
+    const addCarrito = (producto, ) => {
+        if (carritoProductos.map(p => p.id).includes(producto.id)) {
+            setCarritoProductos(
+                carritoProductos.map(prod => {
+                    if(prod.id === producto.id) {
+                        return {
+                            ...prod,
+                            cantidad: prod.cantidad + 1
+                        }
+                    } else {
+                        return prod
+                    }
+                })
+            )
+        } else {
+            setCarritoProductos([
+                ...carritoProductos,
+                {...producto, cantidad: 1}
+            ])
+        }
+    }
+
     const value = useMemo(() => {
         return ({
            carritoProductos,
-           setCarritoProductos
+           setCarritoProductos,
+           masCarrito,
+           menosCarrito,
+           removeProducto,
+           addCarrito
         });
     }, [carritoProductos]);
-
+    
     return (
         <CarritoContext.Provider value={value}>
             {props.children}
